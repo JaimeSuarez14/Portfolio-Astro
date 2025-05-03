@@ -30,7 +30,7 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
     class="flex flex-col items-center justify-center text-paragraph-light dark:text-paragraph-dark"
   >
     <ThemeToggleButton client:visible />
-    <div class="max-w-56 rounded-full overflow-hidden p-8 -mb-2">
+    <div class="max-w-56 rounded-full overflow-hidden p-8 -mb-6">
       <img
         src="../images/avatar.png"
         alt="avatar"
@@ -66,7 +66,7 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
     </SideMenuItems>
 
     <!-- Enlace al CV -->
-    <SideMenuItems href="../Fabian-Fonseca-CV.pdf">
+    <SideMenuItems href="../CV-Example.pdf">
       <CV />
       <span>Mi CV</span>
     </SideMenuItems>
@@ -78,7 +78,7 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
     </SideMenuItems>
 
     <!-- Modal con información adicional -->
-    <SideMenuModal empresa="DigitelConect@" url="../Certificado1-FFF.pdf" />
+    <SideMenuModal empresa="Bussiness/Empresa" url="../#" />
 
     <!-- Enlace a Spotify - último elemento -->
     <SideMenuItems href={`${spotify}`}>
