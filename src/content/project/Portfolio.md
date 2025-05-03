@@ -1,7 +1,7 @@
 ---
 title: 'Personalizacion - Guia'
 subtitle: 'Portfolio para devs'
-description: 'Este es un pequeño proyecto personal en el que desarrollé una plantilla de portfolio responsive hecha en Astro con Tailwind para desarrolladores que quieran mostrar sus proyectos y no tengan mucho tiempo. Además, es de código abierto por si alguien quiere crear algo, mejorarlo o simplemente adaptarlo según su preferencia.'
+description: 'Este es un pequeño proyecto personal en el que desarrollé una plantilla de portfolio responsive.'
 utils: ['Astro', 'Tailwind', 'React']
 heroImage: /images/Portfolio/portfolio1.png
 pubDate: 'Feb 09 2025'
@@ -76,7 +76,7 @@ Los proyectos que quieras mostrar deberán ser agregados en la carpeta `src/cont
 ---
 title: 'Proyecto 1'
 subtitle: 'Portafolio Web'
-description: 'Este proyecto corresponde a mi portafolio profesional como desarrollador web. Está construido con Astro e incluye herramientas modernas como TailwindCSS y otras tecnologías pensadas para una navegación fluida y una experiencia interactiva.'
+description: 'Este proyecto corresponde...'
 utils: ['Astro', 'Tailwind']
 heroImage: /images/Donas/Donas1.png
 pubDate: 'Jul 09 2022'
