@@ -1,5 +1,5 @@
 ---
-title: 'Portfolio'
+title: 'Personalizacion - Guia'
 subtitle: 'Portfolio para devs'
 description: 'Este es un pequeño proyecto personal en el que desarrollé una plantilla de portfolio responsive hecha en Astro con Tailwind para desarrolladores que quieran mostrar sus proyectos y no tengan mucho tiempo. Además, es de código abierto por si alguien quiere crear algo, mejorarlo o simplemente adaptarlo según su preferencia.'
 utils: ['Astro', 'Tailwind', 'React']
@@ -7,22 +7,12 @@ heroImage: /images/Portfolio/portfolio1.png
 pubDate: 'Feb 09 2025'
 ---
 
-# Portfolio para Devs
-#### Plantilla Responsive para Mostrar Proyectos
+# Portafolio Web Personal
 
-**Portfolio para Devs** es una plantilla diseñada para desarrolladores que buscan mostrar sus proyectos de manera sencilla y efectiva. Con una estructura limpia y adaptable, esta plantilla es ideal para quienes necesitan un portafolio rápido sin complicaciones, utilizando tecnologías como **Astro** y **Tailwind CSS**.
+## ¿Qué es este proyecto?
 
-## Funcionalidades Principales
+Este es mi **portafolio web**, un sitio desarrollado con **Astro** para mostrar mi experiencia, habilidades y proyectos realizados. En él encontrarás una presentación clara de quién soy, qué tecnologías manejo, y cómo puedes contactarme. La estructura está pensada para ser intuitiva y visualmente atractiva, adaptándose a cualquier dispositivo.
 
-La plantilla **Portfolio para Devs** cuenta con una serie de características pensadas para facilitar la creación y personalización del portafolio:
-
-- **Diseño Responsive**: Gracias a **Tailwind CSS**, el diseño se adapta perfectamente a cualquier dispositivo, garantizando que tu portafolio se vea bien tanto en móvil como en escritorio.
-  
-- **Sección para Proyectos**: Puedes mostrar fácilmente tus proyectos con descripciones, enlaces y imágenes para que los visitantes puedan ver tu trabajo sin dificultad.
-
-- **Código Abierto**: El proyecto es completamente de código abierto, permitiendo que otros desarrolladores lo mejoren, adapten o modifiquen según sus necesidades.
-
-- **Fácil Personalización**: Puedes modificar la estructura, los colores y las secciones sin necesidad de conocimientos avanzados, gracias a la flexibilidad de **Tailwind CSS** y **Astro**.
 
 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 items-center h-auto">
   <div className="flex flex-col ">
@@ -42,21 +32,78 @@ La plantilla **Portfolio para Devs** cuenta con una serie de características pe
   </div>
 </div>
 
-## Tecnologías Utilizadas
+### ¿Por qué es importante este proyecto?
 
-La plantilla **Portfolio para Devs** está construida utilizando un conjunto de herramientas modernas para asegurar un rendimiento rápido y una experiencia de usuario optimizada:
+Este proyecto representa mi carta de presentación en línea. Me permite mostrar de manera profesional:
 
-- **Astro**: Para crear sitios web rápidos y con un rendimiento excepcional. Esta tecnología permite generar páginas estáticas y dinámicas de forma eficiente.
-- **Tailwind CSS**: Para un diseño atractivo, funcional y completamente personalizable sin necesidad de escribir CSS complejo.
-- **JavaScript/HTML**: Para manejar las interacciones y estructura básica del sitio.
-- **React**: Para agregar funcionalidades interactivas y componentes reutilizables que mejoran la experiencia del usuario. Además, React se integra fácilmente con Astro.
-- **Markdown**: Para escribir contenido de forma clara y estructurada, permitiendo que los desarrolladores creen documentos y publicaciones de forma sencilla y con formato limpio.
+- Mis datos personales y de contacto.
+- Mi stack tecnológico.
+- Proyectos destacados.
+- Experiencia laboral y académica.
+- Redes sociales y enlaces relevantes.
 
-## Ventajas de Portfolio para Devs
+Además, funciona como una demostración en vivo de mis conocimientos en desarrollo frontend y buenas prácticas en diseño responsivo.
 
-- **Rápido de configurar**: Con esta plantilla, puedes tener tu portafolio en línea en poco tiempo, sin complicaciones.
-- **Código abierto**: Si tienes experiencia en desarrollo, puedes modificar y mejorar la plantilla según tus necesidades.
-- **Adaptable a cualquier proyecto**: Puedes usarla para mostrar proyectos personales, freelance o contribuciones a proyectos de código abierto.
+## Tecnologías utilizadas
 
-**Portfolio para Devs** es ideal para quienes necesitan un portafolio funcional y atractivo sin perder tiempo, con la posibilidad de seguir mejorándolo a medida que evoluciona su carrera como desarrollador.
+- **Astro**: Framework moderno para construir sitios rápidos y accesibles.
+- **TailwindCSS**: Librería de utilidades para estilizar con rapidez y consistencia.
+- **Markdown + MDX**: Para estructurar contenido de forma flexible.
+- **Imágenes optimizadas**: Cargadas con `img` y efectos suaves para una navegación moderna.
 
+## ¿Cómo adaptarlo?
+
+Para personalizar este portafolio, modifica las siguientes variables en el archivo `.env` que deberas crear:
+
+
+```env
+NOMBRE_USUARIO_PORTFOLIO=
+ALIAS_USUARIO_PORTFOLIO=
+PRIMERA_CARACTERISTICA_PORTFOLIO=
+SEGUNDA_CARACTERISTICA_PORTFOLIO=
+EXPERIENCIA_PORTFOLIO=
+GITHUB_USUARIO_PORTFOLIO=
+LINKEDIN_USUARIO_PORTFOLIO=
+SPOTIFY_USUARIO_PORTFOLIO=
+TWITTER_USUARIO_PORTFOLIO=
+```
+
+## ¿Cómo mostrar tus propios proyectos?
+
+Los proyectos que quieras mostrar deberán ser agregados en la carpeta `src/content/project/` en formato .md .
+
+```
+---
+title: 'Proyecto 1'
+subtitle: 'Portafolio Web'
+description: 'Este proyecto corresponde a mi portafolio profesional como desarrollador web. Está construido con Astro e incluye herramientas modernas como TailwindCSS y otras tecnologías pensadas para una navegación fluida y una experiencia interactiva.'
+utils: ['Astro', 'Tailwind']
+heroImage: /images/Donas/Donas1.png
+pubDate: 'Jul 09 2022'
+deployed: true
+url: 'https://tusitio.com/proyecto1'
+urlGithub: 'https://github.com/tuusuario/proyecto1'
+---
+```
+
+### Campos obligatorios:
+
+- title: Título del proyecto.
+
+- subtitle: Subtítulo o categoría.
+
+- description: Breve explicación del proyecto.
+
+- utils: Tecnologías utilizadas.
+
+- heroImage: Imagen destacada del proyecto.
+
+- pubDate: Fecha del proyecto.
+
+- deployed: true si está online, false si no.
+
+- url: Enlace al sitio si está publicado.
+  
+- urlGithub: Enlace al repositorio.
+
+## Con estos pasos ya puedes comenzar a construir y personalizar tu propio portafolio para mostrar tu trabajo como desarrollador.
