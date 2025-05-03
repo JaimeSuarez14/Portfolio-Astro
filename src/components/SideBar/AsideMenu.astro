@@ -12,15 +12,15 @@ import SideLi from "@/components/SideBar/SideLi.astro";
 import SideMenuModal from "./SideMenuModal.astro";
 import IconsUtil from "../Utils/IconsUtils.astro";
 
-const person = import.meta.env.NOMBRE_USUARIO_PORTFOLIO;
-const alias = import.meta.env.ALIAS_USUARIO_PORTFOLIO;
-const role1 = import.meta.env.PRIMERA_CARACTERISTICA_PORTFOLIO;
-const role2 = import.meta.env.SEGUNDA_CARACTERISTICA_PORTFOLIO;
-const experience = import.meta.env.EXPERIENCIA_PORTFOLIO;
-const github = import.meta.env.GITHUB_USUARIO_PORTFOLIO;
-const linkedin = import.meta.env.LINKEDIN_USUARIO_PORTFOLIO;
-const spotify = import.meta.env.SPOTIFY_USUARIO_PORTFOLIO;
-const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO;
+const person = import.meta.env.NOMBRE_USUARIO_PORTFOLIO || "Name";
+const alias = import.meta.env.ALIAS_USUARIO_PORTFOLIO || "Alias";
+const role1 = import.meta.env.PRIMERA_CARACTERISTICA_PORTFOLIO || "Role 1";
+const role2 = import.meta.env.SEGUNDA_CARACTERISTICA_PORTFOLIO || "Role 2";
+const experience = import.meta.env.EXPERIENCIA_PORTFOLIO || "Experience";
+const github = import.meta.env.GITHUB_USUARIO_PORTFOLIO || "#";
+const linkedin = import.meta.env.LINKEDIN_USUARIO_PORTFOLIO || "#";
+const spotify = import.meta.env.SPOTIFY_USUARIO_PORTFOLIO || "#";
+const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
 ---
 
 <div
