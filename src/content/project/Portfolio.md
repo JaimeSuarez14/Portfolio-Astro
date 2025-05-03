@@ -82,7 +82,7 @@ heroImage: /images/Donas/Donas1.png
 pubDate: 'Jul 09 2022'
 deployed: true
 url: 'https://tusitio.com/proyecto1'
-urlGithub: 'https://github.com/tuusuario/proyecto1'
+urlGithub:'github url proyecto'
 ---
 ```
 
