@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { themeStore, toggleTheme } from "@/themeStore"; // Importa el store
 

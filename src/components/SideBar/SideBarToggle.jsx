@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { sideBarStore, toggleSideBar } from "@/sideBarStore"; // Importa el store de sidebar
 
@@ -37,7 +37,7 @@ const SideBarToggle = () => {
         }}
         className={`absolute top-2 ${
           isSideBarOpen ? "right-6 md:right-[96%] transform translate-x-1/2 " : "left-2 sm:left-24 transform translate-x-2"
-        }  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50`}
+        }  my-2 cursor-pointer border-2 rounded-xl p-1 bg-gray-200 dark:bg-gray-500 z-50 sm:transition-transform`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

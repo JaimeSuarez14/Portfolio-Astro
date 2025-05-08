@@ -1,6 +1,6 @@
 ---
 import LibraryIcon from "@/icons/Library.astro";
-import SideMenuItems from "./SideMenuItems.astro";
+import SideMenuItems from "./SideMenuItems.jsx";
 import Letter from "@/icons/Letter.astro";
 import Spotify from "@/icons/Spotify.astro";
 import ThemeToggleButton from "./ThemeToggleButton";
@@ -60,19 +60,19 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
 >
   <nav>
     <!-- Enlace de Inicio - Proyectos -->
-    <SideMenuItems href="/">
+    <SideMenuItems href="/" client:visible>
       <LibraryIcon />
       Proyectos
     </SideMenuItems>
 
     <!-- Enlace al CV -->
-    <SideMenuItems href="../CV-Example.pdf">
+    <SideMenuItems href="../CV-Example.pdf" client:visible>
       <CV />
       <span>Mi CV</span>
     </SideMenuItems>
 
     <!-- Enlace de Contacto -->
-    <SideMenuItems href="/contact" transition:name="contact">
+    <SideMenuItems href="/contact" transition:name="contact" client:visible>
       <Letter />
       <span>Contacto</span>
     </SideMenuItems>
@@ -81,7 +81,7 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
     <SideMenuModal empresa="Bussiness/Empresa" url="../#" />
 
     <!-- Enlace a Spotify - último elemento -->
-    <SideMenuItems href={`${spotify}`}>
+    <SideMenuItems href={`${spotify}`} client:visible>
       <Spotify />
       Lista Favorita :3
     </SideMenuItems>
