@@ -27,38 +27,43 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="relative w-full sm:h-[90dvh] p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all sm:mb-4">
+    <section className="relative w-full min-h-[90dvh] p-2 gap-2 bg-transparent dark:bg-gray-900 transform transition-all sm:mb-4">
       <div id="contact" className="text-center">
+        {/* --- MENSAJE ENVIADO --- */}
         {formSubmitted ? (
-          <div className="flex flex-row items-center justify-center space-x-2.5 shadow-md hover:shadow-lg shadow-teal-300 dark:shadow-gray-600 hover:scale-105 transition-all absolute top-1/2 right-1/2 transform -translate-y-1/2 translate-x-1/2 h-auto px-6 py-4">
-            <img src="correo-electronico.png" alt="#" className="size-32" />
-            <h1 className="[text-shadow:_0_3px_2px_rgb(99_200_241_/_0.6)] dark:[text-shadow:_0_3px_2px_rgb(99_102_241_/_0.6)] font-bold italic text-heading-alt-light dark:text-heading-alt-dark text-2xl">
+          <div className="flex flex-col items-center justify-center space-y-4 shadow-2xl shadow-teal-500/70 dark:shadow-indigo-500/70 transition-all absolute top-1/2 right-1/2 transform -translate-y-1/2 translate-x-1/2 h-auto px-10 py-8 bg-white dark:bg-gray-800 rounded-2xl border-4 border-teal-400 dark:border-indigo-400">
+            {/* Icono de Correo (Bootstrap) */}
+            <i className="bi bi-send-check-fill text-7xl text-teal-500 dark:text-indigo-400"></i>
+            <h1 className="text-shadow-custom-light dark:text-shadow-custom-dark font-extrabold italic text-teal-600 dark:text-indigo-400 text-3xl sm:text-4xl">
               Mensaje Enviado
             </h1>
+            <p className="text-gray-700 dark:text-gray-300">
+              ¡Gracias por contactarme!
+            </p>
           </div>
         ) : (
           <div>
-            <div className="ml-48 relative h-23 mb-8 mt-4">
-              <img
-                src="burbuja-de-chat.png"
-                alt="#"
-                className="size-20 absolute -top-0.5 right-1/2 transform -translate-x-3/5 z-50 hover:opacity-70 transition-all"
-              />
-              <h1 className="absolute -bottom-4 right-1/2 transform text-center z-40 -translate-x-1/4 text-4xl font-bold italic dark:text-headingg-main-dark">
+            {/* --- CABECERA DE CONTACTO --- */}
+            <div className="relative w-full max-w-lg mx-auto mb-4 mt-6">
+              {/* Icono de Burbuja de Chat (Bootstrap) */}
+              <i className="bi bi-chat-dots-fill text-6xl absolute -top-4 left-1/2 transform -translate-x-1/2 z-50 text-teal-500 dark:text-indigo-400 hover:scale-110 transition-transform"></i>
+              <h1 className="pt-8 text-center text-5xl font-extrabold italic text-gray-800 dark:text-white [text-shadow:_0_4px_6px_rgb(20_184_166_/_0.5)] dark:[text-shadow:_0_4px_6px_rgb(129_140_248_/_0.5)]">
                 Contacto
               </h1>
             </div>
 
+            {/* --- FORMULARIO --- */}
             <form
               id="contact-form"
               onSubmit={handleSubmit}
-              className="space-y-8 w-full max-w-screen-lg mx-auto rounded-xl p-6 shadow-sm shadow-teal-200 dark:shadow-gray-600 bg-white dark:bg-main-dark transition-all hover:shadow-lg mb-4 overflow-auto"
+              className="space-y-8 w-full max-w-screen-md mx-auto rounded-3xl p-8 sm:p-12 shadow-2xl shadow-gray-400/50 dark:shadow-gray-700/70 bg-white dark:bg-gray-800 transition-all hover:shadow-teal-500/60 dark:hover:shadow-indigo-500/60 mb-8 border-t-4 border-teal-400 dark:border-indigo-400"
             >
               <div className="mb-6">
                 <label
                   htmlFor="name"
-                  className="block text-lg font-semibold text-paragraph-light dark:text-paragraph-dark mb-2"
+                  className="block text-xl font-bold text-gray-700 dark:text-gray-200 mb-2 text-left"
                 >
+                  <i className="bi bi-person-fill text-teal-500 dark:text-indigo-400 mr-2"></i>{" "}
                   Nombre Completo / Empresa
                 </label>
                 <input
@@ -67,19 +72,20 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
-                  placeholder="Harry Potter / Howards"
+                  className="mt-2 block w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-600 focus:border-teal-500 dark:focus:border-indigo-400 rounded-xl shadow-lg transition-all dark:text-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-lg"
+                  placeholder="Tecnologic SAC"
                   required
                 />
               </div>
 
               {/* Email and Subject Fields */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-x-8 mb-6">
-                <div className="mb-6 sm:mb-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 sm:gap-y-0 gap-x-8">
+                <div>
                   <label
                     htmlFor="email"
-                    className="block text-lg font-semibold text-paragraph-light dark:text-paragraph-dark mb-2"
+                    className="block text-xl font-bold text-gray-700 dark:text-gray-200 mb-2 text-left"
                   >
+                    <i className="bi bi-envelope-fill text-teal-500 dark:text-indigo-400 mr-2"></i>{" "}
                     Correo Electrónico
                   </label>
                   <input
@@ -88,8 +94,8 @@ const ContactForm = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
-                    placeholder="you@example.com"
+                    className="mt-2 block w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-600 focus:border-teal-500 dark:focus:border-indigo-400 rounded-xl shadow-lg transition-all dark:text-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-lg"
+                    placeholder="you@email.com"
                     required
                   />
                 </div>
@@ -97,8 +103,9 @@ const ContactForm = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-lg font-semibold text-paragraph-light dark:text-paragraph-dark mb-2"
+                    className="block text-xl font-bold text-gray-700 dark:text-gray-200 mb-2 text-left"
                   >
+                    <i className="bi bi-tag-fill text-teal-500 dark:text-indigo-400 mr-2"></i>{" "}
                     Asunto
                   </label>
                   <select
@@ -106,7 +113,7 @@ const ContactForm = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all hover:scale-105 dark:text-white dark:bg-gray-600"
+                    className="mt-2 block w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-600 focus:border-teal-500 dark:focus:border-indigo-400 rounded-xl shadow-lg transition-all dark:text-white dark:bg-gray-700 appearance-none text-lg"
                   >
                     <option value="feedback">Feedback</option>
                     <option value="inquiry">Oferta</option>
@@ -120,8 +127,9 @@ const ContactForm = () => {
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block text-lg font-semibold text-paragraph-light dark:text-paragraph-dark mb-2"
+                  className="block text-xl font-bold text-gray-700 dark:text-gray-200 mb-2 text-left"
                 >
+                  <i className="bi bi-chat-left-text-fill text-teal-500 dark:text-indigo-400 mr-2"></i>{" "}
                   Mensaje
                 </label>
                 <textarea
@@ -129,25 +137,36 @@ const ContactForm = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-6 py-3 border hover:border-4 focus:border-button-main-light dark:focus:border-button-main-dark rounded-md shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark hover:scale-105 dark:text-white dark:bg-gray-600"
-                  placeholder="Tu Mensaje"
-                  rows="4"
+                  className="mt-2 block w-full px-6 py-4 border-2 border-gray-300 dark:border-gray-600 focus:border-teal-500 dark:focus:border-indigo-400 rounded-xl shadow-lg transition-all dark:text-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-lg"
+                  placeholder="Escribir el Mensaje"
+                  rows="6"
                   required
                 ></textarea>
               </div>
 
+              {/* Submit Button */}
               <div>
                 <button
                   type="submit"
-                  className="w-full bg-button-main-light dark:bg-button-main-dark text-white py-4 px-8 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-all"
+                  className="w-full bg-teal-500 hover:bg-teal-600 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-extrabold py-4 px-8 rounded-full shadow-xl transition-all text-xl disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
                   disabled={
                     loading ||
                     !formData.name ||
                     !formData.email ||
                     !formData.message
-                  } // Deshabilitar si falta algo o está cargando
+                  }
                 >
-                  {loading ? "Enviando..." : "Enviar"}
+                  {loading ? (
+                    <span className="flex items-center justify-center">
+                      <i className="bi bi-arrow-repeat animate-spin mr-2"></i>{" "}
+                      Enviando...
+                    </span>
+                  ) : (
+                    <span className="flex items-center justify-center">
+                      Enviar{" "}
+                      <i className="bi bi-arrow-right-short ml-2 text-3xl"></i>
+                    </span>
+                  )}
                 </button>
               </div>
             </form>

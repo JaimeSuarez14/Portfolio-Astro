@@ -1,28 +1,46 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useStore } from "@nanostores/react";
 import { themeStore, toggleTheme } from "@/themeStore"; // Importa el store
 
 const ThemeToggleButton = () => {
   // Obtener el estado del tema desde el store
-
   const isDark = useStore(themeStore);
 
   // Usar useEffect para aplicar la clase "dark" en el <html>
   useEffect(() => {
     const htmlElement = document.documentElement;
-    if (!isDark) {
+    if (isDark) {
       htmlElement.classList.add("dark");
+      console.log("✓ Clase 'dark' añadida al html");
     } else {
       htmlElement.classList.remove("dark");
+      console.log("✓ Clase 'dark' removida del html");
     }
   }, [isDark]); // Este efecto se ejecuta cuando isDark cambia
+
+  // Sincronizar el estado del store con localStorage al cambiar el tema
+  useEffect(() => {
+    const handleThemeChange = () => {
+      const currentTheme = themeStore.get();
+      const savedTheme = localStorage.getItem("theme");
+      const expectedTheme = currentTheme ? "dark" : "light";
+      
+      if (savedTheme !== expectedTheme) {
+        console.log(`⚠ Inconsistencia: store dice ${expectedTheme} pero localStorage tiene ${savedTheme}`);
+      }
+    };
+    
+    // Verificar consistencia en cada cambio
+    handleThemeChange();
+  }, [isDark]);
 
   return (
     <button
       id="toggle-theme"
       type="button"
-      className="fixed top-1.5 right-2 border-2 cursor-pointer p-0.5 bg-gray-100 dark:bg-gray-500 rounded-full transform transition-all hover:scale-110"
+      className={`fixed top-1.5 right-2 border-2 cursor-pointer p-0.5 bg-gray-100 rounded-full transform transition-all hover:scale-110 ${isDark ? "dark:bg-gray-800" : ""}`}
       onClick={toggleTheme}
+      title={isDark ? "Cambiar a tema light" : "Cambiar a tema dark"}
     >
       <svg
         id="svg-1"

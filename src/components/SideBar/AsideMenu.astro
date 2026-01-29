@@ -20,21 +20,21 @@ const experience = import.meta.env.EXPERIENCIA_PORTFOLIO || "Experience";
 const github = import.meta.env.GITHUB_USUARIO_PORTFOLIO || "#";
 const linkedin = import.meta.env.LINKEDIN_USUARIO_PORTFOLIO || "#";
 const spotify = import.meta.env.SPOTIFY_USUARIO_PORTFOLIO || "#";
-const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
+const twitter = import.meta.env.X_USUARIO_PORTFOLIO || "#";
 ---
 
 <div
-  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark"
+  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light bg-white dark:border-border-dark"
 >
   <div
     class="flex flex-col items-center justify-center text-paragraph-light dark:text-paragraph-dark"
   >
-    <ThemeToggleButton client:visible />
+    <ThemeToggleButton client:only="react" />
     <div class="max-w-56 rounded-full overflow-hidden p-8 -mb-6">
       <img
-        src="../images/avatar.png"
+        src="../images/perfil.png"
         alt="avatar"
-        class="rounded-full border-2 mx-auto w-44 hover:scale-110 transition-all bg-white"
+        class="rounded-full border-2 mx-auto w-44 hover:scale-110 transition-all bg-white dark:bg-blue-950"
       />
     </div>
 
@@ -56,7 +56,7 @@ const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO || "#";
 </div>
 
 <div
-  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto"
+  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto bg-white"
 >
   <nav>
     <!-- Enlace de Inicio - Proyectos -->

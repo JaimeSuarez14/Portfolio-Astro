@@ -1,6 +1,6 @@
 
 # Portfolio-Template-Astro
-![portfolio image](https://fabian-f-portfolio.vercel.app/images/Portfolio/portfolio1.png)
+
 An ideal template for those who need a quick portfolio without complications, using technologies like [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
 ---
@@ -23,7 +23,7 @@ An ideal template for those who need a quick portfolio without complications, us
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/F3RCHEADOR/Portfolio-Template-Astro.git
+   git clone https://github.com/JaimeSuarez14/Portfolio-Template-Astro.git
    cd Portfolio-Template-Astro
    npm install
 2. **Set up Environment Variables**:
@@ -33,7 +33,3 @@ An ideal template for those who need a quick portfolio without complications, us
 4. **Run the Development Server**:
 	```bash
 	npm run dev
-
-	
-
-

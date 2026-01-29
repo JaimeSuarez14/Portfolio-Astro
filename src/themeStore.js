@@ -1,11 +1,18 @@
 import { atom } from 'nanostores';
 
+// Función para obtener el tema inicial desde localStorage
+function getInitialTheme() {
+  // Solo acceder a localStorage si estamos en el navegador
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem("theme");
+    console.log("📦 Tema guardado en localStorage:", savedTheme);
+    return savedTheme === "dark" ? true : false;
+  }
+  return false; // Por defecto, tema light
+}
+
 // Crear el store para el tema
-export const themeStore = atom(() => {
-  const savedTheme = localStorage.getItem("theme");
-  // Si no hay tema guardado, retornamos "false" (tema claro por defecto)
-  return savedTheme ? savedTheme === "dark" : false; 
-});
+export const themeStore = atom(getInitialTheme());
 
 // Función para cambiar el tema
 export const toggleTheme = () => {
@@ -16,11 +23,12 @@ export const toggleTheme = () => {
   const newTheme = !currentTheme;
 
   // Guardar el nuevo tema en localStorage
-  localStorage.setItem("theme", newTheme ? "dark" : "light");
+  const themeValue = newTheme ? "dark" : "light";
+  localStorage.setItem("theme", themeValue);
 
   // Actualizar el store con el nuevo valor
   themeStore.set(newTheme);
 
   // Mostrar el valor en consola para depuración
-  console.log("Nuevo tema guardado:", newTheme ? "dark" : "light");
+  console.log(`🎨 Nuevo tema guardado: ${themeValue} (isDark: ${newTheme})`);
 };
